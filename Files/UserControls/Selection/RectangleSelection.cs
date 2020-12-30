@@ -84,8 +84,7 @@ namespace Files.UserControls.Selection
                     Canvas.SetTop(selectionRectangle, Math.Max(0, originDragPointShifted.Y));
                     selectionRectangle.Width = Math.Max(0, currentPoint.Position.X - Math.Max(0, originDragPointShifted.X));
                     selectionRectangle.Height = Math.Max(0,currentPoint.Position.Y - Math.Max(0, originDragPointShifted.Y));
-                }
-            }
+                }}
             else
             {
                 if (currentPoint.Position.Y <= originDragPointShifted.Y)
