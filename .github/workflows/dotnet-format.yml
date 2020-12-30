@@ -1,5 +1,5 @@
 name: Format check on pull request
-on: [pull_request, push]
+on: pull_request
 jobs:
   dotnet-format:
     runs-on: ubuntu-latest
@@ -14,4 +14,4 @@ jobs:
         uses: xt0rted/dotnet-tool-restore@v1
 
       - name: Run dotnet format
-      - run: /usr/bin/dotnet-format --check --check --folder . --verbosity diag
+        run: /usr/bin/dotnet-format --check --check --folder . --verbosity diag
