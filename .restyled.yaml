@@ -1,6 +1,3 @@
 enabled: true
-inlcude:
-  - "**/*.cs"
-
 restylers:
   - "dotnet-format"
