@@ -1,19 +1,21 @@
-name: DotNetFormat
-
-on: [pull_request]
-
+name: Format check on pull request
+on: pull_request
 jobs:
-  format:
+  dotnet-format:
     runs-on: ubuntu-latest
-    name: Format
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repo
+        uses: actions/checkout@v2
 
-      # workaround for dotnet tools not being on path https://github.com/actions/virtual-environments/issues/213
-      - name: add .dotnet/tools to path
-        run: echo "::set-env name=PATH::${PATH}:${HOME}/.dotnet/tools"
+      - name: Add dotnet-format problem matcher
+        uses: xt0rted/dotnet-format-problem-matcher@v1
 
-      - run: dotnet tool install -g dotnet-format
+      - name: Restore dotnet tools
+        uses: xt0rted/dotnet-tool-restore@v1
 
-      - run: dotnet format --folder . --check --verbose diag
+      - name: Run dotnet format
+        uses: xt0rted/dotnet-format@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          only-changed-files: "true"
 
