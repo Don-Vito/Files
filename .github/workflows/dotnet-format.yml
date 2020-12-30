@@ -14,4 +14,4 @@ jobs:
         uses: xt0rted/dotnet-tool-restore@v1
 
       - name: Run dotnet format
-        run: /usr/bin/dotnet-format --check --check --folder . --verbosity diag
+        run: /usr/bin/dotnet format --check --folder . --verbosity diag
