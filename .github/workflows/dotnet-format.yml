@@ -1,4 +1,4 @@
-name: DotNet
+name: DotNetFormat
 
 on: [pull_request]
 
@@ -15,4 +15,5 @@ jobs:
 
       - run: dotnet tool install -g dotnet-format
 
-      - run: dotnet-format --check --check --folder . -verbosity diag
+      - run: dotnet format --folder . --check --verbose diag
+
