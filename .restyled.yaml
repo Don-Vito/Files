@@ -1,7 +1,4 @@
 enabled: true
-inlcude:
-  - "**/*.cs"
-
 pull_requests: false
 restylers:
   - "dotnet-format"
