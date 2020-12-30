@@ -93,7 +93,7 @@ namespace Files.UserControls.Selection
                 if (currentPoint.Position.Y <= originDragPointShifted.Y)
                 {
                     // Pointer was moved up and left
-                    Canvas.SetLeft(selectionRectangle, Math.Max(0, currentPoint.Position.X));
+                    Canvas.SetLeft(selectionRectangle, Math.Max(0,currentPoint.Position.X));
                     Canvas.SetTop(selectionRectangle, Math.Max(0, currentPoint.Position.Y));
                     selectionRectangle.Width = Math.Max(0, originDragPointShifted.X - Math.Max(0, currentPoint.Position.X));
                     selectionRectangle.Height = Math.Max(0, originDragPointShifted.Y - Math.Max(0, currentPoint.Position.Y));
