@@ -66,45 +66,45 @@ namespace Files.UserControls.Selection
             Active
         }
 
-        protected void DrawRectangle(PointerPoint currentPoint, Point originDragPointShifted)
+        protected void DrawRectangle(PointerPoint CurrentPoint, Point originDragPointShifted)
         {
             // Redraw selection rectangle according to the new point
-            if (currentPoint.Position.X >= originDragPointShifted.X)
+            if (CurrentPoint.Position.X >= originDragPointShifted.X)
             {
-                if (currentPoint.Position.Y <= originDragPointShifted.Y)
+                if (CurrentPoint.Position.Y <= originDragPointShifted.Y)
                 {
                     // Pointer was moved up and right
                     Canvas.SetLeft(selectionRectangle, Math.Max(0, originDragPointShifted.X));
-                    Canvas.SetTop(selectionRectangle, Math.Max(0, currentPoint.Position.Y));
-                    selectionRectangle.Width = Math.Max(0, currentPoint.Position.X - Math.Max(0, originDragPointShifted.X));
-                    selectionRectangle.Height = Math.Max(0, originDragPointShifted.Y - Math.Max(0, currentPoint.Position.Y));
+                    Canvas.SetTop(selectionRectangle, Math.Max(0, CurrentPoint.Position.Y));
+                    selectionRectangle.Width = Math.Max(0, CurrentPoint.Position.X - Math.Max(0, originDragPointShifted.X));
+                    selectionRectangle.Height = Math.Max(0, originDragPointShifted.Y - Math.Max(0, CurrentPoint.Position.Y));
                 }
                 else
                 {
                     // Pointer was moved down and right
                     Canvas.SetLeft(selectionRectangle, Math.Max(0, originDragPointShifted.X));
                     Canvas.SetTop(selectionRectangle, Math.Max(0, originDragPointShifted.Y));
-                    selectionRectangle.Width = Math.Max(0, currentPoint.Position.X - Math.Max(0, originDragPointShifted.X));
-                    selectionRectangle.Height = Math.Max(0, currentPoint.Position.Y - Math.Max(0, originDragPointShifted.Y));
+                    selectionRectangle.Width = Math.Max(0, CurrentPoint.Position.X - Math.Max(0, originDragPointShifted.X));
+                    selectionRectangle.Height = Math.Max(0, CurrentPoint.Position.Y - Math.Max(0, originDragPointShifted.Y));
                 }
             }
             else
             {
-                if (currentPoint.Position.Y <= originDragPointShifted.Y)
+                if (CurrentPoint.Position.Y <= originDragPointShifted.Y)
                 {
                     // Pointer was moved up and left
-                    Canvas.SetLeft(selectionRectangle, Math.Max(0, currentPoint.Position.X));
-                    Canvas.SetTop(selectionRectangle, Math.Max(0, currentPoint.Position.Y));
-                    selectionRectangle.Width = Math.Max(0, originDragPointShifted.X - Math.Max(0, currentPoint.Position.X));
-                    selectionRectangle.Height = Math.Max(0, originDragPointShifted.Y - Math.Max(0, currentPoint.Position.Y));
+                    Canvas.SetLeft(selectionRectangle, Math.Max(0, CurrentPoint.Position.X));
+                    Canvas.SetTop(selectionRectangle, Math.Max(0, CurrentPoint.Position.Y));
+                    selectionRectangle.Width = Math.Max(0, originDragPointShifted.X - Math.Max(0, CurrentPoint.Position.X));
+                    selectionRectangle.Height = Math.Max(0, originDragPointShifted.Y - Math.Max(0, CurrentPoint.Position.Y));
                 }
                 else
                 {
                     // Pointer was moved down and left
-                    Canvas.SetLeft(selectionRectangle, Math.Max(0, currentPoint.Position.X));
+                    Canvas.SetLeft(selectionRectangle, Math.Max(0, CurrentPoint.Position.X));
                     Canvas.SetTop(selectionRectangle, Math.Max(0, originDragPointShifted.Y));
-                    selectionRectangle.Width = Math.Max(0, originDragPointShifted.X - Math.Max(0, currentPoint.Position.X));
-                    selectionRectangle.Height = Math.Max(0, currentPoint.Position.Y - Math.Max(0, originDragPointShifted.Y));
+                    selectionRectangle.Width = Math.Max(0, originDragPointShifted.X - Math.Max(0, CurrentPoint.Position.X));
+                    selectionRectangle.Height = Math.Max(0, CurrentPoint.Position.Y - Math.Max(0, originDragPointShifted.Y));
                 }
             }
         }
